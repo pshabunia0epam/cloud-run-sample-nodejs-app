@@ -57,15 +57,15 @@ app.listen(PORT, () => {
 });
 
 // proxy server to handle backend calls (around CORS)
-const http = require('http');
-const httpProxy = require('http-proxy');
-const proxy = httpProxy.createProxyServer({});
-const PPORT = Number(PORT) + 1;
-http.createServer(function (req, res) {
-  req.headers.host = BACKEND_SERVER_HOSTNAME;
-  proxy.web(req, res, { target: BACKEND_SERVER_URL });
-}).listen(PPORT, () => {
-  console.log(
-    `The proxy server started successfully and is listening for HTTP requests on ${PPORT}`
-  );
-});
+// const http = require('http');
+// const httpProxy = require('http-proxy');
+// const proxy = httpProxy.createProxyServer({});
+// const PPORT = Number(PORT) + 1;
+// http.createServer(function (req, res) {
+//   req.headers.host = BACKEND_SERVER_HOSTNAME;
+//   proxy.web(req, res, { target: BACKEND_SERVER_URL });
+// }).listen(PPORT, () => {
+//   console.log(
+//     `The proxy server started successfully and is listening for HTTP requests on ${PPORT}`
+//   );
+// });
